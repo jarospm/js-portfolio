@@ -5,6 +5,7 @@
   "author": "JV",
   "license": "ISC",
   "scripts": {
+    "css": "npx @tailwindcss/cli -i ./css/input.css -o ./css/output.css --watch",
     "dev": "live-server --port=8000",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -14,10 +15,12 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@tailwindcss/cli": "^4.1.18",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.5.0",
     "live-server": "^1.2.2",
-    "prettier": "^3.6.2"
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.18"
   }
 }

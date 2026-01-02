@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Custom design tokens (replaces tailwind.config.js in v4) */
+@theme {
+  /* Typography */
+  --font-heading: "Courier Prime", monospace;
+  --font-body: "IBM Plex Mono", monospace;
+
+  /* Colors */
+  --color-paper: #f5f0e6;
+  --color-kraft: #e8dcc8;
+  --color-charcoal: #2d2d2d;
+  --color-orange: #f97316;
+  --color-cyan: #22d3ee;
+  --color-green: #22c55e;
+  --color-blue: #3b82f6;
+}
