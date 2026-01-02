@@ -6,12 +6,25 @@
   --font-heading: "Courier Prime", monospace;
   --font-body: "IBM Plex Mono", monospace;
 
-  /* Colors */
-  --color-paper: #f5f0e6;
-  --color-kraft: #e8dcc8;
-  --color-charcoal: #2d2d2d;
-  --color-orange: #f97316;
-  --color-cyan: #22d3ee;
+  /* Colors - Neutral (from css-portfolio) */
+  --color-white: #ffffff;
+  --color-kraft: #f2f0eb;
+  --color-paper: #f7f4e8;
+  --color-mist: #f3f4f6;
+  --color-slate: #374151;
+  --color-charcoal: #1a1a1a;
+
+  /* Colors - Accent (from css-portfolio) */
+  --color-orange: #ff4500;
+  --color-cyan: #0891b2;
   --color-green: #22c55e;
-  --color-blue: #3b82f6;
+  --color-blue: #2563eb;
+  --color-yellow: #facc15;
+}
+
+/* Base styles with background texture */
+@layer base {
+  body {
+    background-image: url("https://www.transparenttextures.com/patterns/white-wall.png");
+  }
 }
