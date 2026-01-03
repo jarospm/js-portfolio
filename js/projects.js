@@ -57,7 +57,7 @@ const projects = [
     id: 6,
     title: 'Simple CRUD API',
     description:
-      'Educational REST API demonstrating database operations with products, suppliers, and purchases. Features SQLite persistence, foreign key constraints, and automatic quantity sync.',
+      'Simple REST API demonstrating database operations with products, suppliers, and purchases. Features SQLite persistence, foreign key constraints, and automatic quantity sync.',
     category: 'Backend',
     technologies: ['Node.js', 'Express', 'SQLite'],
     image: 'images/projects-crud.webp',
@@ -68,27 +68,19 @@ const projects = [
 // Project categories
 const categories = ['All', 'Frontend', 'Backend', 'Algorithm'];
 
-// Project technologies
-const technologies = [
-  'All',
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'TypeScript',
-  'Vite',
-  'C++',
-  'Make',
-  'Node.js',
-  'Express',
-  'SQLite',
-];
 
 // ==========================================================================
 // DOM ELEMENTS
 // ==========================================================================
-const projectsContainer = document.getElementById('projects-container');
+const projectsContainerEl = document.getElementById('projects-container');
+const categoryFiltersEl = document.getElementById('category-filters');
 const visibleCountEl = document.getElementById('visible-count');
 const totalCountEl = document.getElementById('total-count');
+
+// ==========================================================================
+// FILTER STATE
+// ==========================================================================
+let activeCategory = 'All';
 
 // ==========================================================================
 // DISPLAY FUNCTION
@@ -99,8 +91,7 @@ const totalCountEl = document.getElementById('total-count');
  * @param {Array} projectsArray - Array of project objects to display
  */
 function displayProjects(projectsArray) {
-  // Build HTML string using .map() + .join('') to concatenate array into single string
-  projectsContainer.innerHTML = projectsArray
+  projectsContainerEl.innerHTML = projectsArray
     .map(
       (p) => `
       <article class="project-card">
@@ -122,13 +113,64 @@ function displayProjects(projectsArray) {
         </div>
       </article>
     `
-    )
-    .join('');
+    ) // map returns an array
+    .join(''); // concatenate array into single string
 
   // Update counters
   visibleCountEl.textContent = projectsArray.length;
   totalCountEl.textContent = projects.length;
 }
 
-// Initialize on page load
+// ==========================================================================
+// CATEGORY FILTER
+// ==========================================================================
+
+/**
+ * Renders category filter buttons
+ */
+function renderCategoryFilters() {
+  categoryFiltersEl.innerHTML = categories
+    .map(
+      (cat) => `
+      <button
+        class="filter-btn text-label ${cat === activeCategory ? 'active' : ''}"
+        data-category="${cat}"
+      >
+        ${cat}
+      </button>
+    `
+    ) // map returns an array
+    .join(''); // concatenate array into single string
+
+  // Add click handlers to each button
+  categoryFiltersEl.querySelectorAll('.filter-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeCategory = btn.dataset.category;
+      renderCategoryFilters(); // Re-render to update active state
+      applyFilters();
+    });
+  });
+}
+
+/**
+ * Filters projects by the active category
+ * @returns {Array} Filtered projects array
+ */
+function filterByCategory() {
+  if (activeCategory === 'All') return projects;
+  return projects.filter((p) => p.category === activeCategory);
+}
+
+/**
+ * Applies all active filters and updates the display
+ */
+function applyFilters() {
+  const filtered = filterByCategory();
+  displayProjects(filtered);
+}
+
+// ==========================================================================
+// INITIALIZE
+// ==========================================================================
+renderCategoryFilters();
 displayProjects(projects);

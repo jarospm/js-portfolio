@@ -2,11 +2,7 @@
    PROJECTS SECTION - DYNAMIC ELEMENT STYLES
    Styles for JS-generated content (filter buttons, project cards)
 
-   Typography utilities defined in input.css:
-   - .text-label      (heading, xs, bold, uppercase, wide)
-   - .text-label-xs   (heading, xs, bold, uppercase, widest)
-   - .text-title      (heading, lg, bold, uppercase, tight)
-   - .text-body-xs    (body, xs)
+   Note: Typography utilities defined in input.css
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
