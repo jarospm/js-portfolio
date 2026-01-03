@@ -12,71 +12,57 @@
     />
     <link rel="stylesheet" href="css/output.css" />
   </head>
-  <body class="bg-paper text-charcoal font-body">
+  <body class="font-body text-charcoal bg-paper">
     <!-- NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-kraft border-b-2 border-charcoal">
-      <div class="max-w-[1280px] mx-auto px-4">
-        <nav class="flex justify-between items-center h-16">
+    <header class="sticky top-0 z-50 border-b-2 border-charcoal bg-kraft">
+      <div class="mx-auto max-w-7xl px-4">
+        <nav class="flex h-16 items-center justify-between uppercase">
           <!-- Logo/Greeting -->
           <a
             href="#"
-            class="flex items-center gap-2 no-underline font-heading text-xl font-bold uppercase tracking-tight"
+            class="flex items-center gap-2 font-heading text-xl font-bold tracking-tight no-underline"
           >
             <span aria-hidden="true">👋</span>
             <span>Hi, I'm Jaros</span>
           </a>
 
           <!-- Mobile hamburger (checkbox hack) -->
-          <input type="checkbox" id="nav-toggle" class="hidden peer" />
+          <input type="checkbox" id="nav-toggle" class="hidden" />
           <label
             for="nav-toggle"
-            class="md:hidden cursor-pointer font-heading text-4xl leading-none"
+            class="font-heading text-4xl leading-none cursor-pointer md:hidden"
             aria-label="Toggle navigation"
             >☰</label
           >
 
           <!-- Nav Links -->
-          <div
-            class="hidden md:flex items-center gap-3 peer-checked:flex peer-checked:flex-col peer-checked:absolute peer-checked:top-full peer-checked:right-4 peer-checked:bg-kraft peer-checked:border-2 peer-checked:border-charcoal peer-checked:p-3 peer-checked:z-50"
-          >
-            <a
-              href="#projects"
-              class="px-3 py-2 bg-white border-2 border-charcoal font-heading text-sm font-bold uppercase tracking-wide no-underline transition-colors hover:bg-orange hover:text-white"
-              >[01] my_projects</a
-            >
-            <a
-              href="#tools"
-              class="px-3 py-2 bg-white border-2 border-charcoal font-heading text-sm font-bold uppercase tracking-wide no-underline transition-colors hover:bg-orange hover:text-white"
-              >[02] my_tools</a
-            >
-            <a
-              href="#experience"
-              class="px-3 py-2 bg-white border-2 border-charcoal font-heading text-sm font-bold uppercase tracking-wide no-underline transition-colors hover:bg-orange hover:text-white"
-              >[03] about_me</a
-            >
+          <div class="mobile-nav">
+            <a href="#projects" class="nav-link">[01] my_projects</a>
+            <a href="#tools" class="nav-link">[02] my_tools</a>
+            <a href="#experience" class="nav-link">[03] about_me</a>
           </div>
         </nav>
       </div>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="max-w-[1280px] mx-auto px-4 py-12 flex flex-col gap-12">
+    <main class="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-12">
       <!-- HERO SECTION -->
-      <section class="relative grid md:grid-cols-2 gap-12 items-stretch pl-4">
+      <section class="relative grid md:grid-cols-2 items-stretch gap-12 pl-4">
         <!-- Decorative vertical line -->
         <div
-          class="absolute left-0 top-0 w-1 h-full bg-charcoal hidden md:block"
+          class="absolute top-0 left-0 hidden md:block h-full w-1 bg-charcoal"
         ></div>
 
         <!-- Hero Content -->
         <div class="flex flex-col gap-6">
           <!-- Status Badge -->
-          <div class="flex items-center gap-2 bg-charcoal px-2 py-1 w-fit">
+          <div class="flex w-fit items-center gap-2 px-2 py-1 bg-charcoal">
             <span
               class="font-heading text-sm font-bold uppercase tracking-wide text-white"
               >under_construction</span
             >
-            <span class="w-2 h-2 rounded-full bg-yellow"></span>
+            <span class="h-2 w-2 rounded-full bg-yellow"></span>
           </div>
 
           <!-- Main Title -->
@@ -89,7 +75,7 @@
           </h1>
 
           <!-- Bio Box -->
-          <div class="bg-white border-l-4 border-orange pl-4 pr-2 py-2 w-fit">
+          <div class="w-fit py-2 pr-2 pl-4 border-l-4 border-orange bg-white">
             <p>
               10+ years forming & leading software product teams;<br />
               now getting hands-on with frontier tech.
@@ -100,12 +86,12 @@
         <!-- Hero Photo -->
         <div class="relative">
           <div
-            class="md:absolute md:top-0 md:right-0 md:h-full md:w-auto md:max-w-full border-3 border-charcoal bg-mist shadow-[8px_8px_0_theme(colors.charcoal)]"
+            class="md:absolute md:top-0 md:right-0 md:h-full md:w-auto md:max-w-full border-2 border-charcoal bg-mist shadow-brutal"
           >
             <img
               src="images/home-hero.webp"
               alt="Casually working from home"
-              class="w-full h-full object-cover"
+              class="h-full w-full object-cover"
             />
           </div>
         </div>
