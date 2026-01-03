@@ -1,0 +1,160 @@
+/* ==========================================================================
+   PROJECTS SECTION - DYNAMIC ELEMENT STYLES
+   Styles for JS-generated content (filter buttons, project cards)
+
+   Typography utilities defined in input.css:
+   - .text-label      (heading, xs, bold, uppercase, wide)
+   - .text-label-xs   (heading, xs, bold, uppercase, widest)
+   - .text-title      (heading, lg, bold, uppercase, tight)
+   - .text-body-xs    (body, xs)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Filter Buttons
+   JS classes: "filter-btn text-label"
+   -------------------------------------------------------------------------- */
+.filter-btn {
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 2px solid var(--color-charcoal);
+  background: var(--color-white);
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.filter-btn:hover {
+  background: var(--color-mist);
+}
+
+.filter-btn.active {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Project Card
+   -------------------------------------------------------------------------- */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 2px solid var(--color-charcoal);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-brutal);
+}
+
+/* Card Image */
+.project-image {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 2px solid var(--color-charcoal);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  flex: 1;
+}
+
+/* Title - JS classes: "project-title text-title" */
+.project-title {
+  color: var(--color-charcoal);
+}
+
+/* Description - JS classes: "project-description text-sm text-slate" */
+.project-description {
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   Category Badge
+   JS classes: "project-category category-{name} text-label-xs"
+   -------------------------------------------------------------------------- */
+.project-category {
+  padding: var(--spacing-1) var(--spacing-2);
+  border: 2px solid var(--color-charcoal);
+  width: fit-content;
+}
+
+.category-frontend {
+  background: var(--color-cyan);
+  color: var(--color-white);
+}
+
+.category-backend {
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.category-algorithm {
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   Technology Pills
+   JS classes: "tech-pill text-body-xs"
+   -------------------------------------------------------------------------- */
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-1);
+  padding-top: var(--spacing-2);
+  margin-top: auto;
+  border-top: 1px dashed var(--color-slate);
+}
+
+.tech-pill {
+  padding: var(--spacing-1) var(--spacing-2);
+  background: var(--color-mist);
+  border: 1px solid var(--color-slate);
+  color: var(--color-slate);
+}
+
+/* --------------------------------------------------------------------------
+   Project Link
+   JS classes: "project-link text-label"
+   -------------------------------------------------------------------------- */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding-top: var(--spacing-3);
+  text-decoration: none;
+  color: var(--color-charcoal);
+  transition: color 0.15s;
+}
+
+.project-link:hover {
+  color: var(--color-orange);
+}
+
+.project-link::after {
+  content: '→';
+  transition: transform 0.15s;
+}
+
+.project-link:hover::after {
+  transform: translateX(4px);
+}

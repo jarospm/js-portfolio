@@ -2,7 +2,7 @@
 
 /* Custom design tokens */
 @theme {
-  /* Typography */
+  /* Typography - Fonts */
   --font-heading: 'Courier Prime', monospace;
   --font-body: 'IBM Plex Mono', monospace;
 
@@ -34,6 +34,28 @@
 
 /* Reusable component patterns */
 @layer components {
+  /* --------------------------------------------------------------------------
+     Typography Utilities (reusable in JS-generated HTML)
+     -------------------------------------------------------------------------- */
+  .text-label {
+    @apply font-heading text-xs font-bold uppercase tracking-wide;
+  }
+
+  .text-label-xs {
+    @apply font-heading text-xs font-bold uppercase tracking-widest;
+  }
+
+  .text-title {
+    @apply font-heading text-lg font-bold uppercase tracking-tight;
+  }
+
+  .text-body-xs {
+    @apply font-body text-xs;
+  }
+
+  /* --------------------------------------------------------------------------
+     Navigation Components
+     -------------------------------------------------------------------------- */
   /* Navigation link button style */
   .nav-link {
     @apply px-3 py-2 border-2 font-heading text-sm font-bold uppercase tracking-wide no-underline border-charcoal bg-white transition-colors hover:bg-orange hover:text-white;
