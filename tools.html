@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jaros - Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/output.css" />
+  </head>
+  <body class="font-body text-charcoal bg-paper">
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 border-b-2 border-charcoal bg-kraft">
+      <div class="mx-auto max-w-7xl px-4">
+        <nav class="flex items-center justify-between h-16 uppercase">
+          <!-- Logo/Greeting -->
+          <a
+            href="index.html"
+            class="flex items-center gap-2 font-heading text-xl font-bold tracking-tight no-underline"
+          >
+            <span aria-hidden="true">👋</span>
+            <span>Hi, I'm Jaros</span>
+          </a>
+
+          <!-- Mobile hamburger (checkbox hack) -->
+          <input type="checkbox" id="nav-toggle" class="hidden" />
+          <label
+            for="nav-toggle"
+            class="md:hidden font-heading text-4xl leading-none cursor-pointer"
+            aria-label="Toggle navigation"
+            >☰</label
+          >
+
+          <!-- Nav Links -->
+          <div class="mobile-nav">
+            <a href="index.html#projects" class="nav-link">[01] projects</a>
+            <a href="tools.html" class="nav-link bg-orange text-white"
+              >[02] tools</a
+            >
+            <a href="index.html#experience" class="nav-link">[03] about</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex flex-col gap-12 mx-auto max-w-7xl px-4 py-12">
+      <!-- TOOLS SECTION -->
+      <section
+        id="tools"
+        aria-labelledby="tools-heading"
+        class="flex flex-col gap-6"
+      >
+        <!-- Section Header -->
+        <div class="flex items-center gap-4">
+          <div class="px-3 py-1 border-2 border-charcoal bg-white">
+            <h2 class="font-heading text-xl font-bold uppercase">Tools</h2>
+          </div>
+          <div class="flex-1 h-0.5 bg-charcoal"></div>
+          <span class="font-heading text-sm font-bold uppercase tracking-wide"
+            >[my_toolkit]</span
+          >
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Row 1: Cursor, Warp, Figma -->
+          <a href="https://cursor.sh/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-cursor.webp"
+              alt="Cursor"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a href="https://www.warp.dev/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-warp.webp"
+              alt="Warp"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a href="https://www.figma.com/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-figma.webp"
+              alt="Figma"
+              class="w-full h-full object-cover"
+            />
+          </a>
+
+          <!-- Row 2: Airtable, Obsidian, Perplexity -->
+          <a href="https://airtable.com/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-airtable.webp"
+              alt="Airtable"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a href="https://obsidian.md/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-obsidian.webp"
+              alt="Obsidian"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a
+            href="https://www.perplexity.ai/"
+            target="_blank"
+            class="tool-card"
+          >
+            <img
+              src="images/tools-perplexity.webp"
+              alt="Perplexity"
+              class="w-full h-full object-cover"
+            />
+          </a>
+
+          <!-- Row 3: Karabiner, Readwise, Yazi -->
+          <a
+            href="https://karabiner-elements.pqrs.org/"
+            target="_blank"
+            class="tool-card"
+          >
+            <img
+              src="images/tools-karabiner.webp"
+              alt="Karabiner"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a href="https://readwise.io/" target="_blank" class="tool-card">
+            <img
+              src="images/tools-readwise.webp"
+              alt="Readwise"
+              class="w-full h-full object-cover"
+            />
+          </a>
+          <a
+            href="https://yazi-rs.github.io/"
+            target="_blank"
+            class="tool-card"
+          >
+            <img
+              src="images/tools-yazi.webp"
+              alt="Yazi"
+              class="w-full h-full object-cover"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="flex flex-col gap-3 py-4 border-t-4 border-charcoal bg-slate"
+    >
+      <!-- Top Decorative Divider -->
+      <div class="flex items-center justify-center gap-2">
+        <div class="h-0.5 w-12 bg-mist"></div>
+        <div class="h-0.5 w-6 bg-mist"></div>
+        <div class="h-2 w-2 border border-charcoal bg-mist"></div>
+        <div class="h-0.5 w-6 bg-mist"></div>
+        <div class="h-0.5 w-12 bg-mist"></div>
+      </div>
+
+      <!-- Footer Content -->
+      <div class="flex flex-col gap-2 text-center">
+        <p
+          class="font-heading text-sm font-bold uppercase tracking-wide text-mist"
+        >
+          Built with curiosity
+        </p>
+        <p class="font-body text-sm text-mist">© 2026, Jaros</p>
+        <a href="#" class="font-body text-xs text-mist hover:text-white">
+          Privacy Policy
+        </a>
+      </div>
+
+      <!-- Bottom Decorative Divider -->
+      <div class="flex items-center justify-center gap-1">
+        <div class="h-1 w-1 bg-mist"></div>
+        <div class="h-1 w-1 bg-mist"></div>
+        <div class="h-1 w-1 bg-mist"></div>
+      </div>
+    </footer>
+  </body>
+</html>

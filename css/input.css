@@ -61,7 +61,18 @@
      -------------------------------------------------------------------------- */
   /* Navigation link button style */
   .nav-link {
-    @apply px-3 py-2 border-2 font-heading text-sm font-bold uppercase tracking-wide no-underline border-charcoal bg-white transition-colors hover:bg-orange hover:text-white;
+    @apply px-3 py-2 border-2 border-charcoal bg-white
+           font-heading text-sm font-bold uppercase tracking-wide no-underline
+           transition-colors hover:bg-orange hover:text-white;
+  }
+
+  /* --------------------------------------------------------------------------
+     Tool Card Component
+     -------------------------------------------------------------------------- */
+  .tool-card {
+    @apply block aspect-square border-2 border-charcoal bg-mist overflow-hidden
+           transition-all duration-200
+           hover:-translate-y-1 hover:shadow-[4px_4px_0_var(--color-charcoal)];
   }
 
   /* Mobile navigation container with checkbox-driven open state */
