@@ -36,7 +36,7 @@
 @layer components {
   /* Navigation link button style */
   .nav-link {
-    @apply px-3 py-2 border-2 border-charcoal bg-white font-heading text-sm font-bold uppercase tracking-wide no-underline transition-colors hover:bg-orange hover:text-white;
+    @apply px-3 py-2 border-2 font-heading text-sm font-bold uppercase tracking-wide no-underline border-charcoal bg-white transition-colors hover:bg-orange hover:text-white;
   }
 
   /* Mobile navigation container with checkbox-driven open state */
@@ -45,7 +45,7 @@
 
     /* Open state: when sibling checkbox is checked */
     #nav-toggle:checked ~ & {
-      @apply absolute top-full right-4 z-50 flex flex-col p-3 border-2 border-charcoal bg-kraft;
+      @apply flex flex-col absolute top-full right-4 z-50 p-3 border-2 border-charcoal bg-kraft;
     }
   }
 }
