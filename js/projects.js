@@ -10,7 +10,7 @@ const projects = [
       'Browser-based implementation of the classic game, expanded with the Lizard & Spock variant. Features first-to-5 gameplay with score tracking and themed result messages.',
     category: 'Frontend',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-rpc.webp',
     link: 'https://github.com/jarospm/rock-paper-scissors',
   },
   {
@@ -20,7 +20,7 @@ const projects = [
       'Interactive drawing application with a customizable grid up to 100×100 pixels. Includes randomized color generation and a progressive darkening mechanism as you draw.',
     category: 'Frontend',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-eas.webp',
     link: 'https://github.com/jarospm/etch-a-sketch',
   },
   {
@@ -30,7 +30,7 @@ const projects = [
       'Functional calculator with arithmetic operations, square root, decimal support, and keyboard input. Handles edge cases like division by zero and chained operations.',
     category: 'Frontend',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-calc.webp',
     link: 'https://github.com/jarospm/calculator',
   },
   {
@@ -40,7 +40,7 @@ const projects = [
       'Two-player game built with TypeScript featuring turn-based gameplay, automatic win/draw detection, and reset functionality. Demonstrates type aliases and union types.',
     category: 'Frontend',
     technologies: ['HTML', 'CSS', 'TypeScript', 'Vite'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-ttt.webp',
     link: 'https://github.com/jarospm/tic-tac-toe',
   },
   {
@@ -50,7 +50,7 @@ const projects = [
       "Character-level statistical language model that learns patterns from input text using k-grams. Generates new text that mimics the original's style through frequency sampling.",
     category: 'Algorithm',
     technologies: ['C++', 'Make'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-slm.webp',
     link: 'https://github.com/jarospm/slm',
   },
   {
@@ -60,7 +60,7 @@ const projects = [
       'Educational REST API demonstrating database operations with products, suppliers, and purchases. Features SQLite persistence, foreign key constraints, and automatic quantity sync.',
     category: 'Backend',
     technologies: ['Node.js', 'Express', 'SQLite'],
-    image: 'images/placeholder.jpg',
+    image: 'images/projects-crud.webp',
     link: 'https://github.com/jarospm/simple-crud',
   },
 ];
