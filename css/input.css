@@ -23,6 +23,13 @@
 
   /* Shadows */
   --shadow-brutal: 8px 8px 0 var(--color-charcoal);
+
+  /* Spacing - matches Tailwind's scale for use in vanilla CSS */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 0.75rem; /* 12px */
+  --spacing-4: 1rem; /* 16px */
+  --spacing-6: 1.5rem; /* 24px */
 }
 
 /* Base styles with background texture */
@@ -38,11 +45,7 @@
      Typography Utilities (reusable in JS-generated HTML)
      -------------------------------------------------------------------------- */
   .text-label {
-    @apply font-heading text-xs font-bold uppercase tracking-wide;
-  }
-
-  .text-label-xs {
-    @apply font-heading text-xs font-bold uppercase tracking-widest;
+    @apply font-heading text-sm font-bold uppercase tracking-widest;
   }
 
   .text-title {

@@ -82,3 +82,53 @@ const technologies = [
   'Express',
   'SQLite',
 ];
+
+// ==========================================================================
+// DOM ELEMENTS
+// ==========================================================================
+const projectsContainer = document.getElementById('projects-container');
+const visibleCountEl = document.getElementById('visible-count');
+const totalCountEl = document.getElementById('total-count');
+
+// ==========================================================================
+// DISPLAY FUNCTION
+// ==========================================================================
+
+/**
+ * Renders project cards to the container
+ * @param {Array} projectsArray - Array of project objects to display
+ */
+function displayProjects(projectsArray) {
+  // Build HTML string using .map() + .join('') to concatenate array into single string
+  projectsContainer.innerHTML = projectsArray
+    .map(
+      (p) => `
+      <article class="project-card">
+        <div class="project-image">
+          <img src="${p.image}" alt="${p.title}" />
+        </div>
+        <div class="project-content">
+          <span class="project-category category-${p.category.toLowerCase()} text-label">
+            ${p.category}
+          </span>
+          <h3 class="project-title text-title">${p.title}</h3>
+          <p class="project-description text-sm text-slate">${p.description}</p>
+          <div class="project-technologies">
+            ${p.technologies.map((tech) => `<span class="tech-pill text-body-xs">${tech}</span>`).join('')}
+          </div>
+          <a href="${p.link}" class="project-link text-label" target="_blank">
+            View Project
+          </a>
+        </div>
+      </article>
+    `
+    )
+    .join('');
+
+  // Update counters
+  visibleCountEl.textContent = projectsArray.length;
+  totalCountEl.textContent = projects.length;
+}
+
+// Initialize on page load
+displayProjects(projects);
