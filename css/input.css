@@ -63,7 +63,7 @@
   .nav-link {
     @apply px-3 py-2 border-2 border-charcoal bg-white
            font-heading text-sm font-bold uppercase tracking-wide no-underline
-           transition-colors hover:bg-orange hover:text-white;
+           transition-colors hover:bg-mist;
   }
 
   /* --------------------------------------------------------------------------

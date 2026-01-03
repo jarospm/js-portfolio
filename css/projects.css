@@ -9,13 +9,21 @@
    Filter Buttons
    -------------------------------------------------------------------------- */
 .filter-btn {
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-1) var(--spacing-2);
   border: 2px solid var(--color-charcoal);
   background: var(--color-white);
   cursor: pointer;
+  font-size: 0.75rem;
   transition:
     background-color 0.15s,
     color 0.15s;
+}
+
+@media (min-width: 640px) {
+  .filter-btn {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: 0.875rem;
+  }
 }
 
 .filter-btn:hover {
