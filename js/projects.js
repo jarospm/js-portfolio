@@ -68,7 +68,6 @@ const projects = [
 // Project categories
 const categories = ['All', 'Frontend', 'Backend', 'Algorithm'];
 
-
 // ==========================================================================
 // DOM ELEMENTS
 // ==========================================================================
