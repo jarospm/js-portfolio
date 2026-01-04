@@ -68,8 +68,8 @@
   transition: color 0.15s;
 }
 
-.char-counter.warning {
-  color: var(--color-orange);
+.char-counter.error {
+  color: var(--color-error);
 }
 
 .char-counter.valid {

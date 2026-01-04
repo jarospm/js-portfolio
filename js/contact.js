@@ -122,3 +122,31 @@ function markValid(input) {
   field.classList.remove('error');
   field.classList.add('valid');
 }
+
+// ==========================================================================
+// CHARACTER COUNTER
+// ==========================================================================
+
+/**
+ * Updates the character counter display
+ */
+function updateCharCounter() {
+  const length = messageEl.value.length;
+  charCounterEl.textContent = `${length} / ${MIN_MESSAGE_LENGTH}`;
+
+  // Show counter only when user starts typing
+  if (length > 0) {
+    charCounterEl.classList.remove('hidden');
+  } else {
+    charCounterEl.classList.add('hidden');
+  }
+
+  // Update counter color: red if below minimum, green if valid
+  if (length >= MIN_MESSAGE_LENGTH) {
+    charCounterEl.classList.remove('error');
+    charCounterEl.classList.add('valid');
+  } else {
+    charCounterEl.classList.remove('valid');
+    charCounterEl.classList.add('error');
+  }
+}
