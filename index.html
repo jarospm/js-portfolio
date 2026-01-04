@@ -211,12 +211,18 @@
               </div>
             </div>
 
-            <!-- Buttons -->
-            <div class="flex gap-4 pt-2">
+            <!-- Buttons + Success Message -->
+            <div class="flex items-center gap-4 pt-2">
               <button type="submit" class="btn-submit text-label">
                 Send Message →
               </button>
               <button type="reset" class="btn-reset text-label">Reset</button>
+              <span
+                id="success-message"
+                class="text-body-xs font-bold text-valid hidden"
+              >
+                ✓ Message sent
+              </span>
             </div>
           </form>
 
@@ -247,16 +253,6 @@
               <dd class="text-body-xs font-bold">CET (UTC +1)</dd>
             </dl>
           </div>
-        </div>
-
-        <!-- Success Message (hidden by default) -->
-        <div
-          id="success-message"
-          class="success-message hidden p-4 border-2 border-green bg-green/10 text-center"
-        >
-          <p class="text-body font-bold text-green">
-            ✓ Message sent successfully! I'll get back to you soon.
-          </p>
         </div>
       </section>
     </main>

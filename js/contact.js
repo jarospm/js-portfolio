@@ -204,3 +204,15 @@ function validateForm() {
 
   return isValid;
 }
+
+/**
+ * Shows success message and auto-hides after delay
+ */
+function showSuccessMessage() {
+  successMessageEl.classList.remove('hidden');
+
+  // Auto-hide after 5 seconds
+  setTimeout(() => {
+    successMessageEl.classList.add('hidden');
+  }, 5000);
+}

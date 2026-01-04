@@ -532,6 +532,9 @@
   .text-slate {
     color: var(--color-slate);
   }
+  .text-valid {
+    color: var(--color-valid);
+  }
   .text-white {
     color: var(--color-white);
   }
