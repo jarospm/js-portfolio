@@ -150,3 +150,57 @@ function updateCharCounter() {
     charCounterEl.classList.add('error');
   }
 }
+
+// ==========================================================================
+// FORM SUBMISSION
+// ==========================================================================
+
+/**
+ * Validates all form fields
+ * @returns {boolean} - True if all fields are valid
+ */
+function validateForm() {
+  let isValid = true;
+
+  // Validate first name
+  if (validateName(firstNameEl.value)) {
+    markValid(firstNameEl);
+  } else {
+    showError(firstNameEl);
+    isValid = false;
+  }
+
+  // Validate last name
+  if (validateName(lastNameEl.value)) {
+    markValid(lastNameEl);
+  } else {
+    showError(lastNameEl);
+    isValid = false;
+  }
+
+  // Validate email
+  if (validateEmail(emailEl.value)) {
+    markValid(emailEl);
+  } else {
+    showError(emailEl);
+    isValid = false;
+  }
+
+  // Validate subject
+  if (validateSubject(subjectEl.value)) {
+    markValid(subjectEl);
+  } else {
+    showError(subjectEl);
+    isValid = false;
+  }
+
+  // Validate message
+  if (validateMessage(messageEl.value)) {
+    markValid(messageEl);
+  } else {
+    showError(messageEl);
+    isValid = false;
+  }
+
+  return isValid;
+}
