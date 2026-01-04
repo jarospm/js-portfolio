@@ -1,0 +1,115 @@
+/* ==========================================================================
+   CONTACT FORM - VALIDATION STYLES
+   Stateful styles for form validation and user feedback
+
+   Base styles in input.css:
+   - .form-field (layout)
+   - .form-input (appearance, focus state, select arrow)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Validation States
+   -------------------------------------------------------------------------- */
+
+/* Error state */
+.form-field.error .form-input {
+  border-color: var(--color-red);
+  background: #fff5f5;
+}
+
+.form-field.error .form-input:focus {
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* Valid state */
+.form-field.valid .form-input {
+  border-color: var(--color-green);
+  background: #f0fdf4;
+}
+
+.form-field.valid .form-input:focus {
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   Error Messages
+   -------------------------------------------------------------------------- */
+.error-message {
+  color: var(--color-red);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    opacity 0.15s,
+    max-height 0.15s;
+}
+
+.form-field.error .error-message {
+  opacity: 1;
+  max-height: 1.5em;
+}
+
+/* --------------------------------------------------------------------------
+   Character Counter
+   -------------------------------------------------------------------------- */
+.char-counter {
+  transition: color 0.15s;
+}
+
+.char-counter.warning {
+  color: var(--color-orange);
+}
+
+.char-counter.valid {
+  color: var(--color-green);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn-submit,
+.btn-reset {
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 2px solid var(--color-charcoal);
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+}
+
+.btn-submit {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn-submit:hover {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+}
+
+.btn-reset {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+}
+
+.btn-reset:hover {
+  background: var(--color-mist);
+}
+
+/* --------------------------------------------------------------------------
+   Success Message
+   -------------------------------------------------------------------------- */
+.success-message {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
