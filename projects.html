@@ -39,11 +39,13 @@
           <!-- Nav Links -->
           <div class="mobile-nav">
             <a href="index.html" class="nav-link">[00] home</a>
-            <a href="projects.html" class="nav-link bg-orange text-white"
+            <a
+              href="projects.html"
+              class="nav-link bg-orange text-white"
+              aria-current="page"
               >[01] projects</a
             >
             <a href="tools.html" class="nav-link">[02] tools</a>
-            <a href="index.html#about" class="nav-link">[03] about</a>
           </div>
         </nav>
       </div>
@@ -78,7 +80,11 @@
 
         <!-- Project Counter -->
         <div class="pt-2 border-t border-dashed border-charcoal">
-          <span class="font-heading text-sm uppercase tracking-wide">
+          <span
+            class="font-heading text-sm uppercase tracking-wide"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             Showing: <span id="visible-count">0</span> /
             <span id="total-count">0</span> projects
           </span>

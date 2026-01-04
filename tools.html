@@ -39,10 +39,12 @@
           <div class="mobile-nav">
             <a href="index.html" class="nav-link">[00] home</a>
             <a href="projects.html" class="nav-link">[01] projects</a>
-            <a href="tools.html" class="nav-link bg-orange text-white"
+            <a
+              href="tools.html"
+              class="nav-link bg-orange text-white"
+              aria-current="page"
               >[02] tools</a
             >
-            <a href="index.html#about" class="nav-link">[03] about</a>
           </div>
         </nav>
       </div>
@@ -59,7 +61,9 @@
         <!-- Section Header -->
         <div class="flex items-center gap-4">
           <div class="px-3 py-1 border-2 border-charcoal bg-white">
-            <h2 class="font-heading text-xl font-bold uppercase">Tools</h2>
+            <h2 id="tools-heading" class="font-heading text-xl font-bold uppercase">
+              Tools
+            </h2>
           </div>
           <div class="flex-1 h-0.5 bg-charcoal"></div>
           <span class="font-heading text-sm font-bold uppercase tracking-wide"
@@ -76,6 +80,7 @@
               alt="Cursor"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a href="https://www.warp.dev/" target="_blank" class="tool-card">
             <img
@@ -83,6 +88,7 @@
               alt="Warp"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a href="https://www.figma.com/" target="_blank" class="tool-card">
             <img
@@ -90,6 +96,7 @@
               alt="Figma"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
 
           <!-- Row 2: Airtable, Obsidian, Perplexity -->
@@ -99,6 +106,7 @@
               alt="Airtable"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a href="https://obsidian.md/" target="_blank" class="tool-card">
             <img
@@ -106,6 +114,7 @@
               alt="Obsidian"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a
             href="https://www.perplexity.ai/"
@@ -117,6 +126,7 @@
               alt="Perplexity"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
 
           <!-- Row 3: Karabiner, Readwise, Yazi -->
@@ -130,6 +140,7 @@
               alt="Karabiner"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a href="https://readwise.io/" target="_blank" class="tool-card">
             <img
@@ -137,6 +148,7 @@
               alt="Readwise"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
           <a
             href="https://yazi-rs.github.io/"
@@ -148,6 +160,7 @@
               alt="Yazi"
               class="w-full h-full object-cover"
             />
+            <span class="sr-only">(opens in new tab)</span>
           </a>
         </div>
       </section>

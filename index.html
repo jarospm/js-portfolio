@@ -38,12 +38,14 @@
 
           <!-- Nav Links -->
           <div class="mobile-nav">
-            <a href="index.html" class="nav-link bg-orange text-white"
+            <a
+              href="index.html"
+              class="nav-link bg-orange text-white"
+              aria-current="page"
               >[00] home</a
             >
             <a href="projects.html" class="nav-link">[01] projects</a>
             <a href="tools.html" class="nav-link">[02] tools</a>
-            <a href="#about" class="nav-link">[03] about</a>
           </div>
         </nav>
       </div>
@@ -129,8 +131,9 @@
                   name="firstName"
                   placeholder="John"
                   class="form-input"
+                  aria-describedby="first-name-error"
                 />
-                <span class="error-message text-body-xs"
+                <span id="first-name-error" class="error-message text-body-xs"
                   >Please enter a valid name</span
                 >
               </div>
@@ -143,8 +146,9 @@
                   name="lastName"
                   placeholder="Doe"
                   class="form-input"
+                  aria-describedby="last-name-error"
                 />
-                <span class="error-message text-body-xs"
+                <span id="last-name-error" class="error-message text-body-xs"
                   >Please enter a valid name</span
                 >
               </div>
@@ -159,8 +163,9 @@
                 name="email"
                 placeholder="john.doe@example.com"
                 class="form-input"
+                aria-describedby="email-error"
               />
-              <span class="error-message text-body-xs"
+              <span id="email-error" class="error-message text-body-xs"
                 >Please enter a valid email</span
               >
             </div>
@@ -168,14 +173,19 @@
             <!-- Subject Dropdown -->
             <div class="form-field">
               <label for="subject" class="text-label">Subject</label>
-              <select id="subject" name="subject" class="form-input">
+              <select
+                id="subject"
+                name="subject"
+                class="form-input"
+                aria-describedby="subject-error"
+              >
                 <option value="">Select a subject...</option>
                 <option value="project">Project Inquiry</option>
                 <option value="collaboration">Collaboration</option>
                 <option value="feedback">Feedback</option>
                 <option value="other">Other</option>
               </select>
-              <span class="error-message text-body-xs"
+              <span id="subject-error" class="error-message text-body-xs"
                 >Please select a subject</span
               >
             </div>
@@ -189,8 +199,9 @@
                 name="phone"
                 placeholder="+1 234 567 890"
                 class="form-input"
+                aria-describedby="phone-error"
               />
-              <span class="error-message text-body-xs"
+              <span id="phone-error" class="error-message text-body-xs"
                 >Please enter a valid phone number</span
               >
             </div>
@@ -204,9 +215,10 @@
                 placeholder="What's on your mind..."
                 rows="4"
                 class="form-input resize-y"
+                aria-describedby="message-error"
               ></textarea>
               <div class="flex justify-between items-center">
-                <span class="error-message text-body-xs"
+                <span id="message-error" class="error-message text-body-xs"
                   >Minimum 20 characters</span
                 >
                 <span
