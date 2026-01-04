@@ -105,15 +105,6 @@ function showError(input) {
 }
 
 /**
- * Clears error state from a form field
- * @param {HTMLElement} input - The input element
- */
-function clearError(input) {
-  const field = input.closest('.form-field');
-  field.classList.remove('error');
-}
-
-/**
  * Marks a field as valid
  * @param {HTMLElement} input - The input element
  */
@@ -121,6 +112,24 @@ function markValid(input) {
   const field = input.closest('.form-field');
   field.classList.remove('error');
   field.classList.add('valid');
+}
+
+/**
+ * Clears validation states from a form field
+ * @param {HTMLElement} input - The input element
+ */
+function clearFieldState(input) {
+  const field = input.closest('.form-field');
+  field.classList.remove('error', 'valid');
+}
+
+/**
+ * Clears validation states from all form fields
+ */
+function clearAllFieldStates() {
+  document.querySelectorAll('.form-field').forEach((field) => {
+    field.classList.remove('error', 'valid');
+  });
 }
 
 // ==========================================================================
@@ -234,12 +243,8 @@ function handleSubmit(event) {
     // Clear all inputs back to their initial values
     formEl.reset();
 
-    // Clear all validation states
-    document.querySelectorAll('.form-field').forEach((field) => {
-      field.classList.remove('valid', 'error');
-    });
-
-    // Reset character counter
+    // Clear all validation states and reset character counter
+    clearAllFieldStates();
     updateCharCounter();
   }
 
@@ -299,9 +304,19 @@ messageEl.addEventListener('blur', () => {
   }
 });
 
-// Clear errors when user starts typing
-firstNameEl.addEventListener('input', () => clearError(firstNameEl));
-lastNameEl.addEventListener('input', () => clearError(lastNameEl));
-emailEl.addEventListener('input', () => clearError(emailEl));
-subjectEl.addEventListener('change', () => clearError(subjectEl));
-messageEl.addEventListener('input', () => clearError(messageEl));
+// Clear validation state when user starts typing
+firstNameEl.addEventListener('input', () => clearFieldState(firstNameEl));
+lastNameEl.addEventListener('input', () => clearFieldState(lastNameEl));
+emailEl.addEventListener('input', () => clearFieldState(emailEl));
+subjectEl.addEventListener('change', () => clearFieldState(subjectEl));
+messageEl.addEventListener('input', () => clearFieldState(messageEl));
+
+// Form reset - clear all validation states
+formEl.addEventListener('reset', () => {
+  clearAllFieldStates();
+
+  // The reset EVENT fires before the browser clears inputs.
+  // setTimeout with 0ms pushes updateCharCounter to run AFTER
+  // the browser finishes resetting, so messageEl.value is empty.
+  setTimeout(updateCharCounter, 0);
+});
