@@ -44,7 +44,21 @@
     --color-green: #22c55e;
     --color-blue: #2563eb;
     --color-yellow: #facc15;
+    --color-error: #ef4444;
+    --color-error-light: #fef2f2;
+    --color-error-ring: color-mix(in srgb, #ef4444 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --color-error-ring: color-mix(in srgb, var(--color-error) 20%, transparent);
+    }
+    --color-valid: #22c55e;
+    --color-valid-light: #f0fdf4;
+    --color-valid-ring: color-mix(in srgb, #22c55e 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      --color-valid-ring: color-mix(in srgb, var(--color-valid) 20%, transparent);
+    }
     --shadow-brutal: 8px 8px 0 var(--color-charcoal);
+    --shadow-error-ring: 0 0 0 2px var(--color-error-ring);
+    --shadow-valid-ring: 0 0 0 2px var(--color-valid-ring);
     --spacing-1: 0.25rem;
     --spacing-2: 0.5rem;
     --spacing-3: 0.75rem;
@@ -527,6 +541,10 @@
   .shadow-brutal {
     --tw-shadow: 8px 8px 0 var(--tw-shadow-color, var(--color-charcoal));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);

@@ -84,3 +84,41 @@ function validateMessage(message) {
 function validateSubject(subject) {
   return subject.trim().length > 0;
 }
+
+// ==========================================================================
+// ERROR DISPLAY FUNCTIONS
+//
+// State hoisting pattern: we add .error/.valid to the PARENT wrapper,
+// not the input itself. This lets CSS cascade down to style multiple
+// children (input border, error message) with a single class change.
+// ==========================================================================
+
+/**
+ * Shows error state on a form field
+ * @param {HTMLElement} input - The input element
+ */
+function showError(input) {
+  // .closest() traverses UP the DOM to find the parent wrapper
+  const field = input.closest('.form-field');
+  field.classList.remove('valid');
+  field.classList.add('error');
+}
+
+/**
+ * Clears error state from a form field
+ * @param {HTMLElement} input - The input element
+ */
+function clearError(input) {
+  const field = input.closest('.form-field');
+  field.classList.remove('error');
+}
+
+/**
+ * Marks a field as valid
+ * @param {HTMLElement} input - The input element
+ */
+function markValid(input) {
+  const field = input.closest('.form-field');
+  field.classList.remove('error');
+  field.classList.add('valid');
+}

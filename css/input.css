@@ -21,9 +21,19 @@
   --color-blue: #2563eb;
   --color-yellow: #facc15;
 
+  /* Colors - Validation (semantic) */
+  --color-error: #ef4444;
+  --color-error-light: #fef2f2;
+  --color-error-ring: color-mix(in srgb, var(--color-error) 20%, transparent);
+  --color-valid: #22c55e;
+  --color-valid-light: #f0fdf4;
+  --color-valid-ring: color-mix(in srgb, var(--color-valid) 20%, transparent);
+
   /* Shadows */
   --shadow-brutal: 8px 8px 0 var(--color-charcoal);
   --shadow-brutal-sm: 4px 4px 0 var(--color-charcoal);
+  --shadow-error-ring: 0 0 0 2px var(--color-error-ring);
+  --shadow-valid-ring: 0 0 0 2px var(--color-valid-ring);
 
   /* Spacing - matches Tailwind's scale for use in vanilla CSS */
   --spacing-1: 0.25rem; /* 4px */
