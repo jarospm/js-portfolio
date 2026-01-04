@@ -209,12 +209,14 @@ function validateForm() {
  * Shows success message and auto-hides after delay
  */
 function showSuccessMessage() {
+  const firstName = firstNameEl.value.trim();
+  successMessageEl.textContent = `✓ Thank you ${firstName}! Talk soon!`;
   successMessageEl.classList.remove('hidden');
 
-  // Auto-hide after 5 seconds
+  // Auto-hide after 3 seconds
   setTimeout(() => {
     successMessageEl.classList.add('hidden');
-  }, 5000);
+  }, 3000);
 }
 
 /**

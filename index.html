@@ -130,7 +130,9 @@
                   placeholder="John"
                   class="form-input"
                 />
-                <span class="error-message text-body-xs">Please enter a valid name</span>
+                <span class="error-message text-body-xs"
+                  >Please enter a valid name</span
+                >
               </div>
 
               <div class="form-field">
@@ -142,7 +144,9 @@
                   placeholder="Doe"
                   class="form-input"
                 />
-                <span class="error-message text-body-xs">Please enter a valid name</span>
+                <span class="error-message text-body-xs"
+                  >Please enter a valid name</span
+                >
               </div>
             </div>
 
@@ -212,16 +216,16 @@
             </div>
 
             <!-- Buttons + Success Message -->
-            <div class="flex items-center gap-4 pt-2">
+            <div class="flex flex-wrap items-center gap-4 pt-2">
               <button type="submit" class="btn-submit text-label">
                 Send Message →
               </button>
               <button type="reset" class="btn-reset text-label">Reset</button>
               <span
                 id="success-message"
-                class="text-body-xs font-bold text-valid hidden"
+                class="w-full sm:w-auto text-body-xs font-bold text-valid hidden"
               >
-                ✓ Message sent
+                <!-- Message filled by JS -->
               </span>
             </div>
           </form>
