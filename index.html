@@ -54,10 +54,10 @@
     <!-- MAIN CONTENT -->
     <main class="flex flex-col gap-12 mx-auto max-w-7xl px-4 py-12">
       <!-- HERO SECTION -->
-      <section class="relative grid md:grid-cols-2 gap-12 px-4">
+      <section class="relative grid md:grid-cols-2 gap-12">
         <!-- Decorative vertical line -->
         <div
-          class="hidden md:block absolute top-0 left-0 h-full w-1 bg-charcoal"
+          class="hidden md:block absolute top-0 -left-4 h-full w-1 bg-charcoal"
         ></div>
 
         <!-- Hero Content -->
@@ -92,7 +92,7 @@
         <!-- Hero Photo -->
         <div class="relative">
           <div
-            class="md:absolute md:top-0 md:right-0 md:h-full md:w-auto md:max-w-full border-2 border-charcoal bg-mist shadow-brutal"
+            class="md:absolute md:top-0 md:right-0 md:h-full md:w-auto md:max-w-full border-2 border-charcoal bg-mist"
           >
             <img
               src="images/home-hero.webp"
@@ -103,14 +103,61 @@
         </div>
       </section>
 
+      <!-- EXPLORE SECTION -->
+      <section class="grid md:grid-cols-2 gap-6">
+        <!-- Projects Link -->
+        <a
+          href="projects.html"
+          class="group flex flex-col gap-3 p-6 border-2 border-charcoal bg-white transition-shadow hover:shadow-brutal"
+        >
+          <div class="flex items-center justify-between">
+            <span class="font-heading text-xl font-bold uppercase"
+              >[01] Projects</span
+            >
+            <span
+              class="font-heading text-2xl transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+              >→</span
+            >
+          </div>
+          <span class="text-sm text-slate">
+            Learning experiments & code milestones
+          </span>
+          <span class="w-12 h-1 bg-yellow"></span>
+        </a>
+
+        <!-- Tools Link -->
+        <a
+          href="tools.html"
+          class="group flex flex-col gap-3 p-6 border-2 border-charcoal bg-white transition-shadow hover:shadow-brutal"
+        >
+          <div class="flex items-center justify-between">
+            <span class="font-heading text-xl font-bold uppercase"
+              >[02] Tools</span
+            >
+            <span
+              class="font-heading text-2xl transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+              >→</span
+            >
+          </div>
+          <span class="text-sm text-slate">
+            Software powering my daily workflow
+          </span>
+          <span class="w-12 h-1 bg-cyan"></span>
+        </a>
+      </section>
+
       <!-- CONTACT SECTION -->
       <section id="contact" class="flex flex-col gap-6">
         <!-- Section Header -->
         <div class="flex items-center gap-4">
-          <h2 class="text-title shrink-0">Contact</h2>
-          <div class="h-0.5 w-full bg-charcoal"></div>
-          <span class="text-label text-slate shrink-0"
-            >[open_for_projects]</span
+          <div class="px-3 py-1 border-2 border-charcoal bg-white">
+            <h2 class="font-heading text-xl font-bold uppercase">Contact</h2>
+          </div>
+          <div class="flex-1 h-0.5 bg-charcoal"></div>
+          <span class="font-heading text-sm font-bold uppercase tracking-wide"
+            >[let's_connect]</span
           >
         </div>
 
@@ -271,9 +318,9 @@
               </p>
               <p class="text-body">
                 Got questions? Random thoughts? Just want to chat about code or
-                the latest side project rabbit hole? I'm always happy to
-                connect.
+                the latest side project rabbit hole?
               </p>
+              <p class="text-body">Always happy to connect.</p>
             </div>
 
             <!-- Meta Items -->
