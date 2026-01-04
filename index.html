@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/output.css" />
+    <link rel="stylesheet" href="css/contact.css" />
   </head>
   <body class="font-body text-charcoal bg-paper">
     <!-- NAVIGATION -->
@@ -37,7 +38,9 @@
 
           <!-- Nav Links -->
           <div class="mobile-nav">
-            <a href="index.html" class="nav-link bg-orange text-white">[00] home</a>
+            <a href="index.html" class="nav-link bg-orange text-white"
+              >[00] home</a
+            >
             <a href="projects.html" class="nav-link">[01] projects</a>
             <a href="tools.html" class="nav-link">[02] tools</a>
             <a href="#about" class="nav-link">[03] about</a>
@@ -95,6 +98,165 @@
               class="h-full w-full object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="flex flex-col gap-6">
+        <!-- Section Header -->
+        <div class="flex items-center gap-4">
+          <h2 class="text-title shrink-0">Contact</h2>
+          <div class="h-0.5 w-full bg-charcoal"></div>
+          <span class="text-label text-slate shrink-0"
+            >[open_for_projects]</span
+          >
+        </div>
+
+        <!-- Contact Grid: Form + Info -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Form Panel -->
+          <form
+            id="contact-form"
+            class="flex flex-col gap-4 p-6 border-2 border-charcoal bg-white"
+          >
+            <!-- Name Row: First + Last -->
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="form-field">
+                <label for="first-name" class="text-label">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="firstName"
+                  placeholder="John"
+                  class="form-input"
+                />
+                <span class="error-message text-body-xs">Required field</span>
+              </div>
+
+              <div class="form-field">
+                <label for="last-name" class="text-label">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="lastName"
+                  placeholder="Doe"
+                  class="form-input"
+                />
+                <span class="error-message text-body-xs">Required field</span>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+              <label for="email" class="text-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="john.doe@example.com"
+                class="form-input"
+              />
+              <span class="error-message text-body-xs"
+                >Please enter a valid email</span
+              >
+            </div>
+
+            <!-- Subject Dropdown -->
+            <div class="form-field">
+              <label for="subject" class="text-label">Subject</label>
+              <select id="subject" name="subject" class="form-input">
+                <option value="">Select a subject...</option>
+                <option value="project">Project Inquiry</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="error-message text-body-xs"
+                >Please select a subject</span
+              >
+            </div>
+
+            <!-- Phone (Optional) -->
+            <div class="form-field">
+              <label for="phone" class="text-label">Phone (optional)</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 234 567 890"
+                class="form-input"
+              />
+            </div>
+
+            <!-- Message -->
+            <div class="form-field">
+              <label for="message" class="text-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="What's on your mind..."
+                rows="4"
+                class="form-input resize-y"
+              ></textarea>
+              <div class="flex justify-between items-center">
+                <span class="error-message text-body-xs"
+                  >Minimum 20 characters</span
+                >
+                <span
+                  id="char-counter"
+                  class="char-counter text-body-xs text-slate"
+                >
+                  0 / 20
+                </span>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-4 pt-2">
+              <button type="submit" class="btn-submit text-label">
+                Send Message →
+              </button>
+              <button type="reset" class="btn-reset text-label">Reset</button>
+            </div>
+          </form>
+
+          <!-- Info Panel -->
+          <div
+            class="flex flex-col gap-6 p-6 border-2 border-charcoal bg-white"
+          >
+            <h3 class="text-title">Let's connect!</h3>
+
+            <p class="text-body text-slate">
+              Have a project idea, collaboration opportunity, or just want to
+              say hi? Drop a message and I'll get back ASAP.
+            </p>
+
+            <!-- Meta Items -->
+            <dl class="flex flex-col gap-1 pl-3 border-l-4 border-green">
+              <dt class="text-label-sm text-slate">Response Time</dt>
+              <dd class="text-body-xs font-bold">Usually within 24 hours</dd>
+            </dl>
+
+            <dl class="flex flex-col gap-1 pl-3 border-l-4 border-cyan">
+              <dt class="text-label-sm text-slate">Location</dt>
+              <dd class="text-body-xs font-bold">Stockholm, Sweden</dd>
+            </dl>
+
+            <dl class="flex flex-col gap-1 pl-3 border-l-4 border-blue">
+              <dt class="text-label-sm text-slate">Timezone</dt>
+              <dd class="text-body-xs font-bold">CET (UTC +1)</dd>
+            </dl>
+          </div>
+        </div>
+
+        <!-- Success Message (hidden by default) -->
+        <div
+          id="success-message"
+          class="success-message hidden p-4 border-2 border-green bg-green/10 text-center"
+        >
+          <p class="text-body font-bold text-green">
+            ✓ Message sent successfully! I'll get back to you soon.
+          </p>
         </div>
       </section>
     </main>
