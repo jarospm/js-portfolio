@@ -247,3 +247,59 @@ function handleSubmit(event) {
   // 3. Form stays filled — user can fix their mistakes
   // 4. No success message, no reset
 }
+
+// ==========================================================================
+// EVENT LISTENERS
+// ==========================================================================
+
+// Form submission
+formEl.addEventListener('submit', handleSubmit);
+
+// Character counter - update on every keystroke
+messageEl.addEventListener('input', updateCharCounter);
+
+// Real-time validation on blur (when user leaves field)
+firstNameEl.addEventListener('blur', () => {
+  if (firstNameEl.value.trim()) {
+    validateName(firstNameEl.value)
+      ? markValid(firstNameEl)
+      : showError(firstNameEl);
+  }
+});
+
+lastNameEl.addEventListener('blur', () => {
+  if (lastNameEl.value.trim()) {
+    validateName(lastNameEl.value)
+      ? markValid(lastNameEl)
+      : showError(lastNameEl);
+  }
+});
+
+emailEl.addEventListener('blur', () => {
+  if (emailEl.value.trim()) {
+    validateEmail(emailEl.value) ? markValid(emailEl) : showError(emailEl);
+  }
+});
+
+subjectEl.addEventListener('blur', () => {
+  if (subjectEl.value) {
+    validateSubject(subjectEl.value)
+      ? markValid(subjectEl)
+      : showError(subjectEl);
+  }
+});
+
+messageEl.addEventListener('blur', () => {
+  if (messageEl.value.trim()) {
+    validateMessage(messageEl.value)
+      ? markValid(messageEl)
+      : showError(messageEl);
+  }
+});
+
+// Clear errors when user starts typing
+firstNameEl.addEventListener('input', () => clearError(firstNameEl));
+lastNameEl.addEventListener('input', () => clearError(lastNameEl));
+emailEl.addEventListener('input', () => clearError(emailEl));
+subjectEl.addEventListener('change', () => clearError(subjectEl));
+messageEl.addEventListener('input', () => clearError(messageEl));
