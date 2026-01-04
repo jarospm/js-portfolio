@@ -145,9 +145,9 @@ function updateCharCounter() {
 
   // Show counter only when user starts typing
   if (length > 0) {
-    charCounterEl.classList.remove('hidden');
+    charCounterEl.classList.add('visible');
   } else {
-    charCounterEl.classList.add('hidden');
+    charCounterEl.classList.remove('visible');
   }
 
   // Update counter color: red if below minimum, green if valid

@@ -65,7 +65,16 @@
    Character Counter
    -------------------------------------------------------------------------- */
 .char-counter {
-  transition: color 0.15s;
+  opacity: 0;
+  max-height: 0;
+  transition:
+    opacity 0.15s,
+    color 0.15s;
+}
+
+.char-counter.visible {
+  opacity: 1;
+  max-height: 1.5em;
 }
 
 .char-counter.error {
@@ -96,7 +105,6 @@
 
 .btn-submit:hover {
   background: var(--color-orange);
-  border-color: var(--color-orange);
 }
 
 .btn-reset {
@@ -107,4 +115,3 @@
 .btn-reset:hover {
   background: var(--color-mist);
 }
-
