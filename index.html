@@ -131,6 +131,7 @@
                   name="firstName"
                   placeholder="John"
                   class="form-input"
+                  autocomplete="given-name"
                   aria-describedby="first-name-error"
                 />
                 <span id="first-name-error" class="error-message text-body-xs"
@@ -146,6 +147,7 @@
                   name="lastName"
                   placeholder="Doe"
                   class="form-input"
+                  autocomplete="family-name"
                   aria-describedby="last-name-error"
                 />
                 <span id="last-name-error" class="error-message text-body-xs"
@@ -163,6 +165,7 @@
                 name="email"
                 placeholder="john.doe@example.com"
                 class="form-input"
+                autocomplete="email"
                 aria-describedby="email-error"
               />
               <span id="email-error" class="error-message text-body-xs"
@@ -177,6 +180,7 @@
                 id="subject"
                 name="subject"
                 class="form-input"
+                autocomplete="off"
                 aria-describedby="subject-error"
               >
                 <option value="">Select a subject...</option>
@@ -199,6 +203,7 @@
                 name="phone"
                 placeholder="+1 234 567 890"
                 class="form-input"
+                autocomplete="tel"
                 aria-describedby="phone-error"
               />
               <span id="phone-error" class="error-message text-body-xs"
@@ -215,6 +220,7 @@
                 placeholder="What's on your mind..."
                 rows="4"
                 class="form-input resize-y"
+                autocomplete="off"
                 aria-describedby="message-error"
               ></textarea>
               <div class="flex justify-between items-center">
