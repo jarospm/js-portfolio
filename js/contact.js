@@ -216,3 +216,34 @@ function showSuccessMessage() {
     successMessageEl.classList.add('hidden');
   }, 5000);
 }
+
+/**
+ * Handles form submission
+ * @param {Event} event - The submit event
+ */
+function handleSubmit(event) {
+  // Stop the browser's built-in form submission
+  event.preventDefault();
+
+  if (validateForm()) {
+    // Form is valid - show success message
+    showSuccessMessage();
+
+    // Clear all inputs back to their initial values
+    formEl.reset();
+
+    // Clear all validation states
+    document.querySelectorAll('.form-field').forEach((field) => {
+      field.classList.remove('valid', 'error');
+    });
+
+    // Reset character counter
+    updateCharCounter();
+  }
+
+  // Validation failed; validateForm() side effects applied:
+  // 1. Invalid fields get red borders (.error class added)
+  // 2. Error messages appear
+  // 3. Form stays filled — user can fix their mistakes
+  // 4. No success message, no reset
+}
