@@ -10,6 +10,7 @@ const firstNameEl = document.getElementById('first-name');
 const lastNameEl = document.getElementById('last-name');
 const emailEl = document.getElementById('email');
 const subjectEl = document.getElementById('subject');
+const phoneEl = document.getElementById('phone');
 const messageEl = document.getElementById('message');
 const charCounterEl = document.getElementById('char-counter');
 const successMessageEl = document.getElementById('success-message');
@@ -83,6 +84,29 @@ function validateMessage(message) {
  */
 function validateSubject(subject) {
   return subject.trim().length > 0;
+}
+
+/**
+ * Checks if a character is a digit (0-9)
+ * @param {string} char - Single character
+ * @returns {boolean}
+ */
+function isDigit(char) {
+  return char >= '0' && char <= '9';
+}
+
+/**
+ * Validates phone number - must contain at least one digit
+ * @param {string} phone - The phone number to validate
+ * @returns {boolean} - True if valid (contains digits)
+ */
+function validatePhone(phone) {
+  for (const char of phone) {
+    if (isDigit(char)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 // ==========================================================================
@@ -296,6 +320,12 @@ subjectEl.addEventListener('blur', () => {
   }
 });
 
+phoneEl.addEventListener('blur', () => {
+  if (phoneEl.value.trim()) {
+    validatePhone(phoneEl.value) ? markValid(phoneEl) : showError(phoneEl);
+  }
+});
+
 messageEl.addEventListener('blur', () => {
   if (messageEl.value.trim()) {
     validateMessage(messageEl.value)
@@ -309,6 +339,7 @@ firstNameEl.addEventListener('input', () => clearFieldState(firstNameEl));
 lastNameEl.addEventListener('input', () => clearFieldState(lastNameEl));
 emailEl.addEventListener('input', () => clearFieldState(emailEl));
 subjectEl.addEventListener('change', () => clearFieldState(subjectEl));
+phoneEl.addEventListener('input', () => clearFieldState(phoneEl));
 messageEl.addEventListener('input', () => clearFieldState(messageEl));
 
 // Form reset - clear all validation states
