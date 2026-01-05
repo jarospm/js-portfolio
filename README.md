@@ -37,11 +37,8 @@ js-portfolio/
 │   ├── contact.css     # Form validation states
 │   └── projects.css    # Filter buttons, project cards
 ├── js/
-│   ├── components.js   # Dynamic partial loading (footer)
 │   ├── contact.js      # Form validation logic
 │   └── projects.js     # Project filtering & rendering
-├── partials/
-│   └── footer.html     # Reusable footer component
 └── images/             # WebP images
 ```
 
@@ -70,11 +67,6 @@ Validation triggers on blur with immediate visual states: red borders/background
 
 9-card responsive grid with fade-in animations. Links to external developer tools.
 
-### Shared Components
-
-- **Sticky navigation** with mobile hamburger menu (CSS checkbox hack)
-- **Footer** loaded dynamically via `fetch()` from `partials/footer.html`
-
 ## CSS Architecture: Tailwind + Vanilla Hybrid
 
 This project uses a deliberate split between Tailwind and vanilla CSS based on **who controls the styles**.
@@ -98,3 +90,20 @@ When JavaScript toggles classes to reflect state changes, vanilla CSS provides t
 | `npm run check`    | Run ESLint + Prettier validation      |
 | `npm run lint:fix` | Auto-fix linting issues               |
 | `npm run format`   | Format code with Prettier             |
+
+## Code Quality Tools
+
+### ESLint
+
+Static analysis tool that catches potential bugs and enforces coding standards. Key rules in this project:
+
+- **`no-var`** — Enforces `const`/`let` over `var`
+- **`eqeqeq`** — Requires `===` instead of `==` to avoid type coercion surprises
+- **`prefer-const`** — Suggests `const` when a variable is never reassigned
+- **`no-unused-vars`** — Warns about declared but unused variables
+
+### Prettier
+
+Opinionated code formatter that handles all stylistic concerns — quotes, semicolons, indentation, line length. By letting Prettier own formatting, ESLint can focus purely on code quality.
+
+The two tools are integrated via `eslint-config-prettier`, which disables ESLint's formatting rules to avoid conflicts.
